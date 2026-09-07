@@ -1,49 +1,111 @@
-const modal = document.getElementById("productModal");
-const modalTitle = document.getElementById("modalTitle");
-const closeBtn = document.querySelector(".close");
+const nav = document.getElementById("nav");
+const menu = document.getElementById("menu");
 
-const categoryNames = {
-    medicine: "Medicines",
-    personal: "Personal Care",
-    supplements: "Vitamins & Supplements"
+
+// MOBILE MENU
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    nav.classList.remove("show");
+  });
+
+});
+
+
+// PRODUCT DATA
+
+const products = {
+
+  medicine: [
+    "Prescription medicines",
+    "Over-the-counter healthcare products",
+    "Basic first-aid essentials"
+  ],
+
+  personal: [
+    "Skincare products",
+    "Hygiene essentials",
+    "Everyday personal-care products"
+  ],
+
+  supplements: [
+    "Vitamins",
+    "Mineral supplements",
+    "General wellness products"
+  ]
+
 };
+
+
+// MODAL
+
+const modal = document.getElementById("modal");
+const title = document.getElementById("modal-title");
+const items = document.getElementById("modal-items");
+const note = document.getElementById("modal-note");
+
+
+// OPEN PRODUCT POPUP
 
 document.querySelectorAll(".product-card").forEach(card => {
 
-    card.addEventListener("click", () => {
+  card.addEventListener("click", () => {
 
-        const category = card.dataset.category;
+    const category = card.dataset.category;
 
-        modalTitle.textContent =
-            categoryNames[category] || "Products";
-
-        modal.classList.add("active");
-
-    });
-
-});
-
-
-closeBtn.addEventListener("click", () => {
-
-    modal.classList.remove("active");
-
-});
-
-
-modal.addEventListener("click", (e) => {
-
-    if(e.target === modal){
-        modal.classList.remove("active");
+    if(category === "medicine"){
+      title.textContent = "Medicines";
     }
 
+    if(category === "personal"){
+      title.textContent = "Personal Care";
+    }
+
+    if(category === "supplements"){
+      title.textContent = "Vitamins & Supplements";
+    }
+
+    note.textContent =
+      "Product availability may vary. Prescription medicines should be used only as directed by a qualified healthcare professional.";
+
+    items.innerHTML = products[category]
+      .map(item => `<div>✓ ${item}</div>`)
+      .join("");
+
+    modal.classList.add("open");
+
+  });
+
 });
 
 
-document.addEventListener("keydown", (e) => {
+// CLOSE MODAL
 
-    if(e.key === "Escape"){
-        modal.classList.remove("active");
-    }
+document.getElementById("close").addEventListener("click", () => {
+
+  modal.classList.remove("open");
+
+});
+
+
+modal.addEventListener("click", event => {
+
+  if(event.target === modal){
+    modal.classList.remove("open");
+  }
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+  if(event.key === "Escape"){
+    modal.classList.remove("open");
+  }
 
 });
