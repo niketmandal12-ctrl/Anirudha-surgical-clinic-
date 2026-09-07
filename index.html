@@ -4,89 +4,381 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anirudha Surgical Clinic | Janakpur</title>
-<meta name="description" content="Anirudha Surgical Clinic, Janakpur-24, Basahiya, Dhanusha, Nepal. Healthcare services, medicines, personal care, vitamins and supplements.">
-<link rel="stylesheet" href="style.css">
+
+<meta name="description" content="Anirudha Surgical Clinic - Healthcare services, medicines, personal care, vitamins and supplements in Janakpur-24, Basahiya, Dhanusha, Nepal.">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f8fc;
+color:#333;
+line-height:1.6;
+}
+
+header{
+background:#0f766e;
+color:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+nav{
+background:white;
+padding:12px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+nav a{
+text-decoration:none;
+margin:0 12px;
+color:#0f766e;
+font-weight:bold;
+}
+
+.hero{
+padding:60px 5%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.hero img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+color:#0f766e;
+}
+
+.hero p{
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+margin-right:10px;
+font-weight:bold;
+}
+
+.primary{
+background:#0f766e;
+color:white;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.section{
+padding:60px 5%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.section-title h2{
+color:#0f766e;
+font-size:32px;
+}
+
+.info-grid,
+.service-grid,
+.review-grid,
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.category-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.category-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.category-card div{
+padding:15px;
+}
+
+.contact-box{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+footer{
+background:#0f766e;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.float-wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+@media(max-width:768px){
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:32px;
+}
+}
+</style>
 </head>
+
 <body>
-<header class="topbar">
-  <div class="brand"><span class="logo">✚</span><div><strong>Anirudha Surgical Clinic</strong><small>Trusted Healthcare for Your Family</small></div></div>
-  <a class="wa-top" href="https://wa.me/9779704896008" target="_blank" rel="noopener">💬 WhatsApp<br><b>9704896008</b></a>
+
+<header>
+<div class="logo">✚ Anirudha Surgical Clinic</div>
+<div>
+📞 +977 9704896008
+</div>
 </header>
 
-<nav class="nav">
-  <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
-  <button data-category="medicine">Medicines</button>
-  <button data-category="personal">Personal Care</button>
-  <button data-category="supplements">Vitamins & Supplements</button>
-  <a href="#contact">Contact</a>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#categories">Products</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">WELCOME TO ANIRUDHA SURGICAL CLINIC</span>
-    <h1>Trusted Healthcare<br><em>for Your Family</em></h1>
-    <p>Quality healthcare services, medicines, personal care products, vitamins and supplements in one convenient place.</p>
-    <div class="actions">
-      <a class="btn primary" href="tel:+9779704896008">📞 Call Now</a>
-      <a class="btn green" href="https://wa.me/9779704896008" target="_blank" rel="noopener">💬 WhatsApp Us</a>
-    </div>
-  </div>
-  <div class="hero-photo"><img src="assets/clinic-family.svg" alt="Anirudha Surgical Clinic welcome illustration"></div>
-</section>
+<section class="hero" id="home">
 
-<section id="about" class="section">
-  <div class="section-head"><span>ABOUT US</span><h2>Care you can trust</h2></div>
-  <p class="lead">Anirudha Surgical Clinic is committed to compassionate, reliable and patient-centered healthcare for our community.</p>
-  <div class="info-grid">
-    <div class="info"><b>🩺 Professional Care</b><p>Patient-focused healthcare support in a clean and welcoming environment.</p></div>
-    <div class="info"><b>🧴 Everyday Essentials</b><p>Personal care, vitamins and wellness products, subject to availability.</p></div>
-    <div class="info"><b>🕒 Open Every Day</b><p>Sunday – Saturday · 7:00 AM – 9:00 PM</p></div>
-  </div>
-</section>
+<div>
+<h1>Trusted Healthcare For Your Family</h1>
 
-<section id="services" class="section soft">
-  <div class="section-head"><span>OUR SERVICES</span><h2>Healthcare support</h2></div>
-  <div class="service-grid">
-    <div>🩺<b>General Consultation</b><small>Basic health consultation</small></div>
-    <div>🩹<b>Wound Dressing</b><small>Wound care & dressing</small></div>
-    <div>💉<b>First Aid</b><small>Basic first-aid support</small></div>
-    <div>❤️<b>BP Monitoring</b><small>Blood pressure check</small></div>
-    <div>🩸<b>Blood Sugar</b><small>Blood sugar monitoring</small></div>
-    <div>🏥<b>Minor Procedures</b><small>Selected minor procedures</small></div>
-  </div>
-</section>
+<p>
+Quality healthcare services, medicines, personal care products,
+vitamins and supplements in one convenient place.
+</p>
 
-<section class="section categories">
-  <div class="section-head"><span>SHOP BY CATEGORY</span><h2>Tap a category to view products</h2></div>
-  <div class="category-grid">
-    <button class="category-card medicine" data-category="medicine"><span>💊</span><b>Medicines</b><small>View medicine products →</small></button>
-    <button class="category-card personal" data-category="personal"><span>🧴</span><b>Personal Care</b><small>View skin & care products →</small></button>
-    <button class="category-card supplements" data-category="supplements"><span>🌿</span><b>Vitamins & Supplements</b><small>View wellness products →</small></button>
-  </div>
-</section>
+<a href="tel:+9779704896008" class="btn primary">
+Call Now
+</a>
 
-<section id="contact" class="section contact">
-  <div><div class="section-head"><span>CONTACT US</span><h2>Anirudha Surgical Clinic</h2></div>
-  <p>📍 Janakpur-24, Basahiya, Dhanusha, Nepal</p>
-  <p>📞 <a href="tel:+9779704896008">+977 9704896008</a></p>
-  <p>🕒 Sunday – Saturday · 7:00 AM – 9:00 PM</p></div>
-  <div class="contact-card"><h3>Need assistance?</h3><p>Call or message us on WhatsApp.</p><a class="btn green" href="https://wa.me/9779704896008" target="_blank" rel="noopener">Message on WhatsApp</a></div>
-</section>
-</main>
-
-<footer>© 2026 Anirudha Surgical Clinic · Janakpur-24, Basahiya, Dhanusha, Nepal</footer>
-
-<div id="productModal" class="modal" aria-hidden="true">
-  <div class="modal-box">
-    <button class="close" aria-label="Close">×</button>
-    <span id="modalLabel" class="eyebrow"></span>
-    <h2 id="modalTitle"></h2>
-    <p class="modal-note">Product availability may vary. Medicines that require a prescription should be used only as directed by a qualified healthcare professional.</p>
-    <div id="productGrid" class="product-grid"></div>
-  </div>
+<a href="https://wa.me/9779704896008" class="btn whatsapp">
+WhatsApp Us
+</a>
 </div>
-<a class="float-wa" href="https://wa.me/9779704896008" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-<script src="script.js"></script>
+
+<div>
+<img src="assets/clinic.jpg" alt="Clinic">
+</div>
+
+</section>
+
+<section class="section" id="about">
+
+<div class="section-title">
+<h2>About Us</h2>
+</div>
+
+<div class="info-grid">
+
+<div class="card">
+<h3>🩺 Professional Care</h3>
+<p>Reliable healthcare support in a clean and welcoming environment.</p>
+</div>
+
+<div class="card">
+<h3>💊 Quality Medicines</h3>
+<p>Medicines and healthcare essentials available.</p>
+</div>
+
+<div class="card">
+<h3>🕒 Open Daily</h3>
+<p>Sunday - Saturday<br>7:00 AM - 9:00 PM</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="services">
+
+<div class="section-title">
+<h2>Our Services</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="card">🩺 General Consultation</div>
+<div class="card">🩹 Wound Dressing</div>
+<div class="card">💉 First Aid Support</div>
+<div class="card">❤️ BP Monitoring</div>
+<div class="card">🩸 Blood Sugar Monitoring</div>
+<div class="card">🏥 Minor Procedures</div>
+
+</div>
+
+</section>
+
+<section class="section" id="categories">
+
+<div class="section-title">
+<h2>Products Categories</h2>
+</div>
+
+<div class="category-grid">
+
+<div class="category-card">
+<img src="assets/medicine.jpg" alt="">
+<div>
+<h3>Medicines</h3>
+<p>Prescription & OTC medicines</p>
+</div>
+</div>
+
+<div class="category-card">
+<img src="assets/personal-care.jpg" alt="">
+<div>
+<h3>Personal Care</h3>
+<p>Skin care & daily essentials</p>
+</div>
+</div>
+
+<div class="category-card">
+<img src="assets/vitamins.jpg" alt="">
+<div>
+<h3>Vitamins & Supplements</h3>
+<p>Health and wellness products</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Find Us</h2>
+</div>
+
+<iframe
+src="https://maps.google.com/maps?q=Janakpur-24,Basahiya,Dhanusha,Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;border-radius:15px;"
+loading="lazy">
+</iframe>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Customer Reviews</h2>
+</div>
+
+<div class="review-grid">
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Very friendly and helpful service.</p>
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Good medicine availability and quick response.</p>
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Highly recommended healthcare clinic.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="contact-box">
+
+<h2>Contact Us</h2>
+
+<p>📍 Janakpur-24, Basahiya, Dhanusha, Nepal</p>
+<p>📞 +977 9704896008</p>
+<p>🕒 Sunday - Saturday | 7:00 AM - 9:00 PM</p>
+
+<br>
+
+<a href="https://wa.me/9779704896008" class="btn whatsapp">
+Message on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Anirudha Surgical Clinic | Janakpur, Nepal
+</footer>
+
+<a class="float-wa"
+href="https://wa.me/9779704896008"
+target="_blank">
+💬
+</a>
+
 </body>
-</html>
+  </html>
